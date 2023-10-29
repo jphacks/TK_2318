@@ -41,13 +41,16 @@
 * Slack API
 
 #### フレームワーク・ライブラリ・モジュール
+＊ TypeScript
 * Next.js
+* Tailwind CSS
+* Python
 * Django
+* Graphviz
 
 
 #### デバイス
-* 
-* 
+* PC（Web）
 
 ### 独自技術
 #### ハッカソンで開発した独自機能・技術
