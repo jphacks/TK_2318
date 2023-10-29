@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { notoJp } from "./fonts";
 
 export const metadata: Metadata = {
   title: "TaskBrancher",
@@ -17,11 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className={inter.className}>
+      <body className={notoJp.className}>
         <header>
-          <nav className="w-full  border-b-1 border-[#BEBEBE]">
+          <nav className="w-full  border-b-2 border-[#BEBEBE]">
             <div className="flex justify-between mx-5  py-4 h-15">
-              <div className="font-bold text-[15px] ">TaskBrancher</div>
+              <div className="font-bold text-[18px] ">TaskBrancher</div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
