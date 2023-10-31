@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import TaskInput from "@/component/TaskInput";
-import ProgressBar from "@/component/ProgressBar";
 import BranchDiagram from "@/component/BranchDiagram";
-import TaskList from "@/component/TaskList";
+import ProgressBar from "@/component/ProgressBar";
+import ProjectTasks from "@/component/ProjectTask.server";
+import TaskInput from "@/component/TaskInput";
 
 const data = {
   frontend: [
@@ -87,12 +85,13 @@ function HomePage() {
       <div className="grid grid-cols-2 mx-2">
         <div className="flex flex-col items-center space-y-4">
           <ProgressBar />
-          <TaskList
+          <ProjectTasks />
+          {/* <TaskList
             color={"blue"}
             title={"フロントエンド"}
             tasks={data.frontend}
           />
-          <TaskList color={"red"} title={"バックエンド"} tasks={data.backend} />
+          <TaskList color={"red"} title={"バックエンド"} tasks={data.backend} /> */}
         </div>
         <div className="flex flex-col items-center">
           <BranchDiagram />
