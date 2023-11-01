@@ -9,10 +9,10 @@
 https://github.com/jphacks/TK_2318/assets/77139337/fc999fba-1f9c-4cde-9af1-9aac97ce2620
 
 
-
-## 作品URL
-[リンクを貼る]
-
+<!-- 
+## 作品URL 
+[リンクを貼る] 
+-->
 ## スライドURL
 [Canva](https://www.canva.com/design/DAFyiDKr9oM/279IUhFJexGCIqPiKevNfQ/view?utm_content=DAFyiDKr9oM&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
