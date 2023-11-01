@@ -2,96 +2,56 @@
 
 import BranchDiagram from "@/component/BranchDiagram";
 import ProgressBar from "@/component/ProgressBar";
-import ProjectTasks from "@/component/ProjectTask.server";
 import TaskInput from "@/component/TaskInput";
-
-const data = {
-  frontend: [
-    {
-      taskName: "UIデザイン作成",
-      branchName: "feature/ui-design",
-      date: "2023-01-14",
-      check: false,
-    },
-    {
-      taskName: "ToDo追加機能の実装",
-      branchName: "feature/add-todo",
-      date: "2023-01-16",
-      check: false,
-    },
-    {
-      taskName: "ToDo一覧表示機能の実装",
-      branchName: "feature/list-todos",
-      date: "2023-01-18",
-      check: false,
-    },
-    {
-      taskName: "ToDo削除機能の実装",
-      branchName: "feature/delete-todo",
-      date: "2023-01-20",
-      check: false,
-    },
-    {
-      taskName: "ToDo編集機能の実装",
-      branchName: "feature/edit-todo",
-      date: "2023-01-22",
-      check: false,
-    },
-  ],
-  backend: [
-    {
-      taskName: "データベース設計",
-      branchName: "feature/db-design",
-      date: "2023-01-15",
-      check: false,
-    },
-    {
-      taskName: "API設計",
-      branchName: "feature/api-design",
-      date: "2023-01-17",
-      check: false,
-    },
-    {
-      taskName: "APIの実装：ToDo追加",
-      branchName: "feature/api-add-todo",
-      date: "2023-01-19",
-      check: false,
-    },
-    {
-      taskName: "APIの実装：ToDo一覧取得",
-      branchName: "feature/api-list-todos",
-      date: "2023-01-21",
-      check: false,
-    },
-    {
-      taskName: "APIの実装：ToDo削除",
-      branchName: "feature/api-delete-todo",
-      date: "2023-01-23",
-      check: false,
-    },
-    {
-      taskName: "APIの実装：ToDo編集",
-      branchName: "feature/api-edit-todo",
-      date: "2023-01-25",
-      check: false,
-    },
-  ],
-};
+import TaskList from "@/component/TaskList";
+import useFetchProjectData from "@/component/useFetchData";
+import { TaskProps } from "@/types/TaskTypes";
 
 function HomePage() {
+  const { projectData, error } = useFetchProjectData(
+    "https://d0a1dfbb-d2b6-4849-8acf-05ca18b5c680.mock.pstmn.io/api/projects/1"
+  );
+
+  if (error) {
+    console.error("There was a problem with the fetch operation:", error);
+  }
+
+  const frontendTasks: TaskProps[] =
+    projectData?.frontend.map((task) => ({
+      ...task,
+      check: false,
+    })) || [];
+
+  console.log(frontendTasks);
+
+  const backendTasks: TaskProps[] =
+    projectData?.backend.map((task) => ({
+      ...task,
+      check: false,
+    })) || [];
+
   return (
     <div className="grid grid-rows-[1fr,4fr] h-screen">
       <TaskInput />
       <div className="grid grid-cols-2 mx-2">
         <div className="flex flex-col items-center space-y-4">
           <ProgressBar />
-          <ProjectTasks />
-          {/* <TaskList
-            color={"blue"}
-            title={"フロントエンド"}
-            tasks={data.frontend}
-          />
-          <TaskList color={"red"} title={"バックエンド"} tasks={data.backend} /> */}
+          {projectData ? (
+            <>
+              <TaskList
+                color={"blue"}
+                title={"フロントエンド"}
+                tasks={frontendTasks}
+              />
+              <TaskList
+                color={"red"}
+                title={"バックエンド"}
+                tasks={backendTasks}
+              />
+            </>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
         <div className="flex flex-col items-center">
           <BranchDiagram />
