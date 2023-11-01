@@ -2,9 +2,18 @@
 
 [![JPHACKS2023 Logo](https://jphacks.com/wp-content/uploads/2023/07/JPHACKS2023_ogp.png)](https://www.youtube.com/watch?v=yYRQEdfGjEg)
 
+## 作品紹介動画
+[リンクを貼る]
+
+## 作品URL
+[リンクを貼る]
+
+## スライドURL
+[リンクを貼る]
+
 ## 製品概要
 初心者の開発者でも、もう迷わない！  
-AI技術を駆使した革命的なタスク管理ツールで、開発プロジェクトをスムーズに進行。  
+AI技術を駆使した革命的なタスク管理ツールで、開発プロジェクトをスムーズに進行！  
 生産性の向上を実感してください！
 
 
