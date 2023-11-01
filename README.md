@@ -2,9 +2,19 @@
 
 [![JPHACKS2023 Logo](https://jphacks.com/wp-content/uploads/2023/07/JPHACKS2023_ogp.png)](https://www.youtube.com/watch?v=yYRQEdfGjEg)
 
+## 作品紹介動画
+[リンクを貼る]
+
+## 作品URL
+[リンクを貼る]
+
+## スライドURL
+[Canva](https://www.canva.com/design/DAFyiDKr9oM/279IUhFJexGCIqPiKevNfQ/view?utm_content=DAFyiDKr9oM&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+
+
 ## 製品概要
 初心者の開発者でも、もう迷わない！  
-AI技術を駆使した革命的なタスク管理ツールで、開発プロジェクトをスムーズに進行。  
+AI技術を駆使した革命的なタスク管理ツールで、開発プロジェクトをスムーズに進行！  
 生産性の向上を実感してください！
 
 
@@ -35,27 +45,38 @@ AI技術を駆使した革命的なタスク管理ツールで、開発プロジ
 
 
 ### 主要な機能
-1. AIによるタスクの自動細分化と進捗管理
-2. ブランチ名の瞬時な自動生成
-3. スマートな期限設定機能
-
-
-### 機能詳細
-- ブランチ名の一貫性を確保しつつ、瞬時に生成
+<details>
+<summary>AIによるタスクの自動細分化と進捗管理</summary>
+   
 - タスク管理をシンプルに、進捗も一目で分かる
+
+</details>
+
+<details>
+<summary>ブランチ名の瞬時な自動生成</summary>
+   
+- ブランチ名の一貫性を確保しつつ、瞬時に生成
+
+</details>
+
+<details>
+<summary>スマートな期限設定機能</summary>
+   
 - タスクの期限を自動で提案し、通知でリマインド
+
+</details>
 
 
 ### 追加予定の機能
 - コミットメッセージの自動生成
-- 開発のディレクトリ構造の可視化
+- ディレクトリ構造の可視化
 - 必要なコードのスニペット生成
-
+- git-flowかgithub-flowを選択できるようにする
+- ブランチ名の付け方を選べるようにする（GitHubアカウントで認証、ユーザー名を取得しブランチに埋め込む）
 
 ### 製品のこだわり
 - 開発者の手間を最小化し、クリエイティブな作業に専念できる設計
 - プロジェクトの全体像の透明性と明確な進捗状況を実現
-
 
 
 ## 開発技術情報
