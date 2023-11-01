@@ -1,6 +1,7 @@
 // hooks/useFetchProjectData.ts
+import { ProjectData } from "@/app/types/TaskTypes";
 import { useEffect, useState } from "react";
-import { ProjectData } from "@/types/TaskTypes";
+
 
 const useFetchProjectData = (url: string) => {
   const [projectData, setProjectData] = useState<ProjectData | null>(null);

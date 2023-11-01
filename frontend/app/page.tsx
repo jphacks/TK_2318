@@ -1,11 +1,11 @@
 "use client";
 
-import BranchDiagram from "@/component/BranchDiagram";
-import ProgressBar from "@/component/ProgressBar";
-import TaskInput from "@/component/TaskInput";
-import TaskList from "@/component/TaskList";
-import useFetchProjectData from "@/component/useFetchData";
-import { TaskProps } from "@/types/TaskTypes";
+import BranchDiagram from "@/components/BranchDiagram";
+import ProgressBar from "@/components/ProgressBar";
+import TaskInput from "@/components/TaskInput";
+import TaskList from "@/components/TaskList";
+import useFetchProjectData from "@/components/useFetchData";
+import { TaskProps } from "./types/TaskTypes";
 
 function HomePage() {
   const { projectData, error } = useFetchProjectData(
