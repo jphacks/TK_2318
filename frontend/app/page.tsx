@@ -35,17 +35,20 @@ function HomePage() {
       <TaskInput />
       <div className="grid grid-cols-2 mx-2">
         <div className="flex flex-col items-center space-y-4">
-          <ProgressBar />
+          <ProgressBar
+            frontendTasks={frontendTasks}
+            backendTasks={backendTasks}
+          />
           {projectData ? (
             <>
               <TaskList
-                color={"blue"}
                 title={"フロントエンド"}
+                color={"blue"}
                 tasks={frontendTasks}
               />
               <TaskList
-                color={"red"}
                 title={"バックエンド"}
+                color={"red"}
                 tasks={backendTasks}
               />
             </>

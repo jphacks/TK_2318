@@ -1,25 +1,21 @@
-interface TaskProps {
-  taskName: string;
-  branchName: string;
-  date: string;
-  check: boolean;
-}
-
-interface TaskListProps {
-  title: string;
-  color: string;
-  tasks: TaskProps[];
-}
+import { TaskListProps, TaskProps } from "@/app/types/TaskTypes";
+import React, { useState, useEffect } from "react";
+import CalculateProgress from "./CaluculateProgress";
 
 function TaskItem({ taskName, branchName, date, check }: TaskProps) {
+  const [isChecked, setIsChecked] = useState(check);
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked);
+  };
   return (
     <li className="mb-3  ">
       <div className="  rounded-[10px]  bg-white items-center flex p-2 ">
         <div className="w-[10%] justify-center  flex mr-3">
           <input
-            checked={check}
+            checked={isChecked}
+            onChange={handleCheckboxChange}
             type="checkbox"
-            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
           />
         </div>
         <div className="flex  items-center w-[100%] justify-between ">
@@ -53,14 +49,11 @@ function TaskItem({ taskName, branchName, date, check }: TaskProps) {
 }
 
 function TaskList({ title, color, tasks }: TaskListProps) {
-  function calculateProgress(tasks: any[]) {
-    const totalTasks = tasks.length;
-    const completedTasks = tasks.filter((task) => task.check === true).length;
+  const progress = CalculateProgress(tasks);
 
-    return (completedTasks / totalTasks) * 100;
-  }
-  const progress = calculateProgress(tasks);
-  console.log(progress);
+  useEffect(() => {
+    console.log(progress); // log the progress when component mounts or tasks change
+  }, [tasks]);
 
   return (
     <div className={`w-[90%] h-auto bg-${color}-200 rounded-[10px] `}>
@@ -77,7 +70,7 @@ function TaskList({ title, color, tasks }: TaskListProps) {
           }%] bg-white border-x border-[#BEBEBE]`}
         ></div>
       </div>
-      <ul className="p-5">
+      <ul className="p-5 pt-6">
         {tasks.map((task, index) => (
           <TaskItem
             key={index}
