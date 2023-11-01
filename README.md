@@ -9,7 +9,8 @@
 [リンクを貼る]
 
 ## スライドURL
-[リンクを貼る]
+[Canva](https://www.canva.com/design/DAFyiDKr9oM/279IUhFJexGCIqPiKevNfQ/view?utm_content=DAFyiDKr9oM&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+
 
 ## 製品概要
 初心者の開発者でも、もう迷わない！  
